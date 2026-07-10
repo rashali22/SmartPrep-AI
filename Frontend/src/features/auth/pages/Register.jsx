@@ -13,8 +13,11 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
       e.preventDefault()
-      await handleRegister({username,email,password})
-      navigate("/")
+     const success = await handleRegister({ username, email, password });
+
+if (success) {
+    navigate("/");
+}
     }
 
       if(loading){
@@ -26,7 +29,7 @@ const Register = () => {
     <div className="form-container">
      <h1>Register</h1>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="input-group">
             <label htmlFor="username">Username</label>
             <input onChange={(e) => {setUsername(e.target.value)}} type="text" id="username" name='username' placeholder='Enter username'/>
@@ -37,7 +40,7 @@ const Register = () => {
         </div>
         <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input onChange={(e) => {setPassword(e.target.value)}} type="password" id="password" name='email' placeholder='Enter password'/>
+            <input onChange={(e) => {setPassword(e.target.value)}} type="password" id="password" name='password' placeholder='Enter password'/>
         </div>
 
         <button className='button primary-button'> Register</button>
