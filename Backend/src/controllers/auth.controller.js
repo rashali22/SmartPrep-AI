@@ -129,7 +129,7 @@ async function getMeController(req, res) {
     message: "User details fetched sucessfully",
     user:{
       id: user._id,
-      username: user.userName,
+      username: user.username,
       email: user.email
 
     }
