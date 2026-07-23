@@ -27,7 +27,6 @@ export const useAuth = () => {
   try {
     const data = await register({ username, email, password });
 
-    alert("Registration successful! Please log in to continue.");
 
     return true;
   } catch (err) {
