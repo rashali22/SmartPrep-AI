@@ -28,11 +28,11 @@ export async function login({email,password}){
 
         const response = await api.post("/api/auth/login", {
             email, password
-        }, )
+        } )
     
         return response.data
 
-    }catch(error){
+    } catch(err){
         console.log(err)
     }
 }
@@ -45,7 +45,7 @@ export async function logout(){
 
         return response.data
 
-    }catch(err){
+    } catch(err){
 
     }
 }
@@ -59,7 +59,7 @@ export async function getMe(){
 
         return response.data
 
-    }catch(err){
+    } catch(err){
         console.log(err)
 
     }
