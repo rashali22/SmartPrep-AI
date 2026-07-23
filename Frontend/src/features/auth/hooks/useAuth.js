@@ -21,17 +21,21 @@ export const useAuth = () => {
 
     }
 
-    const handleRegister = async ({ username, email, password }) => {
-      setLoading(true)
-      try{
-        const data = await register ({ username, email, password})
-        setUser(data.user)
-      }catch(err){
+   const handleRegister = async ({ username, email, password }) => {
+  setLoading(true);
 
-      }finally{
-        setLoading(false)
-      }
-    }
+  try {
+    const data = await register({ username, email, password });
+
+    alert("Registration successful! Please log in to continue.");
+
+    return true;
+  } catch (err) {
+    return false;
+  } finally {
+    setLoading(false);
+  }
+};
 
     const handleLogout = async () => {
         setLoading(true)
